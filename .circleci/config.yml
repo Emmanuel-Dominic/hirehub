@@ -1,0 +1,25 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - run:
+          name: Run Jest with Coverage
+          command: npm test
+      - store_artifacts:
+          path: coverage/lcov-report
+          destination: coverage
+      - store_test_results:
+          path: coverage
+
+workflows:
+  version: 2
+  candidate_frontend_workflow:
+    jobs:
+      - test
