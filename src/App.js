@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import Candidates from './components/Candidates';
 import Candidate from './components/Candidate';
+import ErrorPage from './components/ErrorPage';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
                     <Route index element={<Home />} />
                     <Route path='/candidates' element={<Candidates />} />
                     <Route path='/candidates/:candidateId' element={<Candidate />} />
+                    <Route path='*' element={<ErrorPage />} />
                 </Route>
             </Routes>
       </BrowserRouter>
