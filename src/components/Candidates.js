@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CreateCandidate from "./CreateCandidate";
-import { getCandidates } from "../services";
+import { getCandidates, deleteCandidate } from "../services";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -19,13 +19,19 @@ const Candidates = () => {
     const handleView = (candidateId) => {
         navigate(`/candidates/${candidateId}`);
     }
+
+    const handleDelete = async (candidateId) => {
+        await deleteCandidate(candidateId);
+        setCandidates(candidates.filter(candidate => candidate.id !== candidateId));
+    }
+
     return(
         <>
             <CreateCandidate />
-            {candidates ? (<table>
+            {candidates && candidates.length>0 ? (<table>
                 <thead>
                     <tr>
-                        <td>No</td>
+                        <td>ID</td>
                         <td>FirstName</td>
                         <td>LastName</td>
                         <td>Email</td>
@@ -43,7 +49,7 @@ const Candidates = () => {
                         <td>{candidate.email}</td>
                         <td>{candidate.phoneNumber}</td>
                         <td><button onClick={() => handleView(candidate.id)}>View</button></td>
-                        <td><button>Delete</button></td>
+                        <td><button onClick={() => handleDelete(candidate.id)}>Delete</button></td>
                     </tr>
                 ))}
                 </tbody>
