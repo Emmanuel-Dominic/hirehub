@@ -16,8 +16,8 @@ const Home = () => {
         fetchMessage();
     }, []);
     return (
-        <div>
-            <h1>{message}</h1>
+        <div className='mt-4'>
+            <h1 className='text-center'>{message}</h1>
         </div>
     );
 }

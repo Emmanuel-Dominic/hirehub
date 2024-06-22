@@ -139,85 +139,97 @@ const CandidateForm = ({ initialData = {}, onSubmit }) => {
     };
 
     return (
-        <>
+        <div className="m-2">
             <p className="success">{message}</p>
-            <form onSubmit={handleSubmit}>
+            <form className="form w-75" onSubmit={handleSubmit}>
                 <h2>{candidateId ? 'Update Candidate' : 'Create Candidate'}</h2>
-                <label>Enter your firstName:*
+                <label className="form-label">Enter your firstName:*
                     <input
                         type="text"
                         name="firstName"
                         value={formData.firstName || ""}
                         onChange={handleChange}
+                        className="form-control"
+                        required
                     />
                     {errors.firstName && <span className="error">{errors.firstName}</span>}
                 </label>
-                <label>Enter your lastName:*
+                <label className="form-label">Enter your lastName:*
                     <input
                         type="text"
                         name="lastName"
                         value={formData.lastName || ""}
                         onChange={handleChange}
+                        className="form-control"
+                        required
                     />
                     {errors.lastName && <span className="error">{errors.lastName}</span>}
                 </label>
-                <label>Enter your email:*
+                <label className="form-label">Enter your email:*
                     <input
                         type="text"
                         name="email"
                         value={formData.email || ""}
                         onChange={handleChange}
+                        className="form-control"
+                        required
                     />
                     {errors.email && <span className="error">{errors.email}</span>}
                 </label>
-                <label>Enter your phoneNumber:
+                <label className="form-label">Enter your phoneNumber:
                     <input
                         type="text"
                         name="phoneNumber"
                         value={formData.phoneNumber || ""}
                         onChange={handleChange}
+                        className="form-control"
                     />
                     {errors.phoneNumber && <span className="error">{errors.phoneNumber}</span>}
                 </label>
-                <label>Enter your timeInterval:
+                <label className="form-label">Enter your timeInterval:
                     <input
                         type="text"
                         name="timeInterval"
                         value={formData.timeInterval || ""}
                         onChange={handleChange}
+                        className="form-control"
                     />
                     {errors.timeInterval && <span className="error">{errors.timeInterval}</span>}
                 </label>
-                <label>Enter your linkedIn:
+                <label className="form-label">Enter your linkedIn:
                     <input
                         type="text"
                         name="linkedIn"
                         value={formData.linkedIn || ""}
                         onChange={handleChange}
+                        className="form-control"
                     />
                     {errors.linkedIn && <span className="error">{errors.linkedIn}</span>}
                 </label>
-                <label>Enter your github:
+                <label className="form-label">Enter your github:
                     <input
                         type="text"
                         name="github"
                         value={formData.github || ""}
                         onChange={handleChange}
+                        className="form-control"
                     />
                     {errors.github && <span className="error">{errors.github}</span>}
                 </label>
-                <label>Enter your comment:*
+                <label className="form-label">Enter your comment:*
                     <input
                         type="text"
                         name="comment"
                         value={formData.comment || ""}
                         onChange={handleChange}
+                        className="form-control"
+                        required
                     />
                     {errors.comment && <span className="error">{errors.comment}</span>}
                 </label>
-                <input type="submit" value={candidateId ? "Update" : "Create"} />
+                <input type="submit" className="btn btn-sm btn-primary center" value={candidateId ? "Update" : "Create"} />
             </form>
-        </>
+        </div>
     );
 };
 

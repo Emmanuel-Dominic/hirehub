@@ -4,19 +4,19 @@ import { Outlet, Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
-        <>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
+        <div>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item">
+                        <Link to="/" className="nav-link">Home</Link>
                     </li>
-                    <li>
-                        <Link to="/candidates">Candidates</Link>
+                    <li className="nav-item">
+                        <Link to="/candidates"  className="nav-link">Candidates</Link>
                     </li>
                 </ul>
             </nav>
             <Outlet />
-        </>
+        </div>
     )
 }
 
