@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { useNavigate } from 'react-router-dom';
-
 
 const isValidUrl = (string) => {
     try {
@@ -14,7 +12,6 @@ const isValidUrl = (string) => {
 
 const CandidateForm = ({ initialData = {}, onSubmit }) => {
     const { candidateId } = useParams();
-    // const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -35,7 +32,7 @@ const CandidateForm = ({ initialData = {}, onSubmit }) => {
             setFormData(initialData);
         }
     }, [initialData]);
-    
+
     const validateField = (name, value) => {
         const errorsArray = { ...errors };
 
@@ -138,7 +135,6 @@ const CandidateForm = ({ initialData = {}, onSubmit }) => {
             setErrors({});
             const response = await onSubmit(formData);
             setMessage(response.message);
-            // navigate('/candidates');
         }
     };
 
