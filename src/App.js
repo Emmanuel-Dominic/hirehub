@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axiosInstance from './helpers/axiosConfig';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from './components/NavBar';
+import Home from './components/Home';
 
 
 const App = () => {
-    const [message, setMessage] = useState("");
-
-    useEffect(() => {
-        const fetchMessage = async() => {
-            try {
-                const response = await axiosInstance.get(`${process.env.REACT_APP_BACKEND_URL}`);
-                setMessage(response.data.message);
-            } catch (error) {
-                setMessage(error.message);
-            }
-        }
-        fetchMessage();
-    }, []);
     return (
-        <div>
-            <h1>{message}</h1>
-        </div>
-    );
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<NavBar />}>
+                    <Route index element={<Home />} />
+                </Route>
+            </Routes>
+      </BrowserRouter>
+    )
 }
 
 export default App;
