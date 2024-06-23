@@ -1,5 +1,8 @@
 # hirehub
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Emmanuel-Dominic/hirehub/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Emmanuel-Dominic/hirehub/tree/main)
+
+
 In the project directory, you can run:
 
 ### `npm install` then run
