@@ -3,6 +3,10 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Emmanuel-Dominic/hirehub/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Emmanuel-Dominic/hirehub/tree/main)
 
 
+Hours spent on the project
+
+### `16 hours`
+
 In the project directory, you can run:
 
 ### `npm install` then run
@@ -25,3 +29,9 @@ Create List Feature
 
 Update View Feature
 ![update-view](https://github.com/Emmanuel-Dominic/hirehub/assets/50827537/935324af-5fff-4c40-bff4-7a44ad2d2e46)
+
+
+Areas of improvement
+- Add or write more unittests
+- Improve on the ui design
+- state management to have a smooth view of candidate details on create or update.
